@@ -1,5 +1,5 @@
-import { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "../context/context";
+import { useEffect, useState } from "react";
+import { ThemeContextType, useThemeContext } from "../context/context";
 import { BsMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
 import { TfiClose } from "react-icons/tfi";
@@ -10,7 +10,7 @@ import NAV_LINKS from "../constants/NAV_LINKS";
 import Sidebar from "./Sidebar";
 
 export default function Navbar() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } : ThemeContextType= useThemeContext();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [themeChangeAnimation, setThemeChangeAnimation] = useState(false);
@@ -18,7 +18,7 @@ export default function Navbar() {
   const themeChangeHandler = () => {
     setThemeChangeAnimation(true);
     setTheme((prev: string) => {
-      return prev == "dark" ? "light" : "dark";
+      return prev === "dark" ? "light" : "dark";
     });
   };
 
@@ -34,23 +34,23 @@ export default function Navbar() {
 
   return (
     <nav className={`mb-8 z-50 `}>
-      <div className=" flex justify-between sm:px-2  md:px-4 px-8 py-4 ">
-        <div className=" flex gap-4 ">
+      <div className="flex justify-between sm:px-2 md:px-4 px-8 py-4">
+        <div className="flex gap-4">
           {/* logo */}
           <Link
             to="/"
-            className=" font-cursive hover:font-bold hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-pink-500 text-2xl"
+            className="font-cursive hover:font-bold hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-pink-500 text-2xl"
           >
             The BPHO
           </Link>
           {/* dark mode btn */}
           <button
-            onClick={() => themeChangeHandler()}
-            className={`text-xl mb-1  flex items-start  link-hover hover:rounded-full p-2  ${
-              theme == "dark" ? "hover:bg-blue-900 " : "hover:bg-blue-300"
-            }  `}
+            onClick={themeChangeHandler}
+            className={`text-xl mb-1 flex items-start link-hover hover:rounded-full p-2 ${
+              theme === "dark" ? "hover:bg-blue-900 " : "hover:bg-blue-300"
+            }`}
           >
-            {theme == "dark" ? (
+            {theme === "dark" ? (
               <BsFillSunFill className="pb-0.5" />
             ) : (
               <BsMoonStarsFill className="pb-0.5" />
@@ -67,7 +67,7 @@ export default function Navbar() {
               >
                 <Link
                   to={link.path}
-                  className="font-light hover:font-bold hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-pink-500  "
+                  className="font-light hover:font-bold hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-pink-500 "
                 >
                   {link.title}
                 </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
-            <TfiClose className=" text-2xl " />
+            <TfiClose className="text-2xl" />
           ) : (
             <CgMenuRight className="text-3xl" />
           )}
