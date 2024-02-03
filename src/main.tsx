@@ -13,6 +13,7 @@ import Health from "./pages/services/Health.tsx";
 import Helping from "./pages/services/Helping.tsx";
 import ServiceLayout from "./components/ServiceLayout.tsx";
 import Matrimonial from "./pages/services/Matrimonial.tsx";
+import Business from "./pages/services/Business.tsx";
 
 const router = createBrowserRouter([
   {
@@ -54,6 +55,9 @@ const router = createBrowserRouter([
               {
                 path: "matrimonial",
                 element: <Matrimonial />,
+              },     {
+                path: "buisness",
+                element: <Business />,
               },
           {
             path: "tourism",
