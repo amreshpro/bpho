@@ -40,9 +40,15 @@
   scroll-behavior: smooth;
 
   --dark-bg:#10141b;
-  --dark-text:rgb(0, 46, 73);
+  --dark-text:rgb(4, 5, 6);
   --light-bg:#dbeafe;
   --light-text:#e2e2e2;
+
+  --hero-light-bg:#5aa4ff;
+  --hero-dark-bg:#010e1d;
+  --hero-light-text:#fff;
+  --hero-dark-text:#01030e;
+
 --dark-mobile-menu:#452c63;
 --light-mobile-menu:#c1ccec;
 
@@ -72,6 +78,15 @@ background-color: var(--light-bg);
 color: var(--dark-text);
 }
 
+.hero-dark{
+background-color: var(--hero-dark-bg);
+color: var(--hero-light-text);
+}
+
+.hero-light{
+background-color:var(--hero-light-bg);
+color:var(--hero-dark-text) ;
+}
 
 
 @keyframes move {
