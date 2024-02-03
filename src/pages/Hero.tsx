@@ -4,9 +4,9 @@ export default function Hero() {
   const { theme }: ThemeContextType = useThemeContext();
   return (
     <div
-      className={` ${theme=='dark'?'hero-dark':'hero-light'} flex sm:flex-col sm:gap-4 justify-center  w-screen md:h-full h-[calc(100vh-10rem)]`}
+      className={` ${theme=='dark'?'hero-dark':'hero-light'} flex sm:flex-col sm:gap-4 justify-center  w-screen md:h-full h-[calc(100vh-10rem)]py-4 `}
     >
-      <div className="content w-1/2 sm:w-screen px-2 flex flex-col gap-2">
+      <div className="content w-1/2  py-4 sm:w-screen px-2 flex flex-col gap-2">
         <h1 className="font-bold font-bebas leading-loose text-3xl sm:text-xl">
           Bhartiya Prajapati Heros Organisation
         </h1>
