@@ -67,7 +67,7 @@ export default function Navbar() {
               >
                 <Link
                   to={link.path}
-                  className="font-light hover:font-bold hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-pink-500 "
+                  className="font-medium hover:font-bold hover:underline hover:underline-offset-4 hover:decoration-4 hover:decoration-pink-500 "
                 >
                   {link.title}
                 </Link>

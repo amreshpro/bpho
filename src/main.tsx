@@ -7,9 +7,12 @@ import About from "./components/About";
 import { Suspense } from "react";
 import Services from "./components/Services";
 import Contact from "./components/Contact";
-
-
-
+import Tourism from "./pages/services/Tourism.tsx";
+import Education from "./pages/services/Education.tsx";
+import Health from "./pages/services/Health.tsx";
+import Helping from "./pages/services/Helping.tsx";
+import ServiceLayout from "./components/ServiceLayout.tsx";
+import Matrimonial from "./pages/services/Matrimonial.tsx";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +38,37 @@ const router = createBrowserRouter([
       },
       {
         path: "/services",
-        element: <Suspense fallback={<h1>Loading....</h1>}><Services /></Suspense>,
+        element: (
+          <Suspense fallback={<h1>Loading....</h1>}>
+            <ServiceLayout />
+          </Suspense>
+        ),
+        errorElement:(<>
+        <h1 className="text-xl text-center w-full text-red-500">Error in Service</h1>
+        </>),
+        children: [
+            {
+                path: "",
+                element: <Services />,
+              },
+              {
+                path: "matrimonial",
+                element: <Matrimonial />,
+              },
+          {
+            path: "tourism",
+            element: <Tourism />,
+          },   {
+            path: "education",
+            element: <Education />,
+          },   {
+            path: "health",
+            element: <Health />,
+          },   {
+            path: "helping",
+            element: <Helping />,
+          },
+        ],
       },
       {
         path: "/contact",

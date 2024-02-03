@@ -39,10 +39,10 @@
 
   scroll-behavior: smooth;
 
-  --dark-bg:#231739;
+  --dark-bg:#10141b;
   --dark-text:rgb(0, 46, 73);
-  --light-bg:#fff;
-  --light-text:#fff;
+  --light-bg:#dbeafe;
+  --light-text:#e2e2e2;
 --dark-mobile-menu:#452c63;
 --light-mobile-menu:#c1ccec;
 
@@ -62,9 +62,15 @@
 
 
 
+.dark{
+background-color: var(--dark-bg);
+color: var(--light-text);
+}
 
-
-
+.light{
+background-color: var(--light-bg);
+color: var(--dark-text);
+}
 
 
 

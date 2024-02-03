@@ -8,8 +8,8 @@ export default function ThemeWrapper({ children }: { children: ReactNode }) {
     <div
       className={`${
         theme == "dark"
-          ? "bg-[#10141b] text-gray-300"
-          : "bg-blue-100 text-blue-900"
+          ? "dark"
+          : "light"
       }`}
     >
       {children}
