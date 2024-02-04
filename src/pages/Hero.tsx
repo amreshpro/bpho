@@ -1,7 +1,7 @@
-import { ThemeContextType, useThemeContext } from "../context/context";
+import { useThemeContext } from "../context/context";
 
 export default function Hero() {
-  const { theme }: ThemeContextType = useThemeContext();
+  const { theme }= useThemeContext();
   return (
     <div
       className={` ${theme=='dark'?'hero-dark':'hero-light'} flex sm:flex-col sm:gap-4 justify-center  w-screen md:h-full h-[calc(100vh-10rem)]py-4 `}

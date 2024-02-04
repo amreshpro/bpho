@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ThemeContextType, useThemeContext } from "../context/context";
+import {  useThemeContext } from "../context/context";
 import { BsMoonStarsFill, BsFillSunFill } from "react-icons/bs";
 import { CgMenuRight } from "react-icons/cg";
 import { TfiClose } from "react-icons/tfi";
@@ -10,7 +10,7 @@ import NAV_LINKS from "../constants/NAV_LINKS";
 import Sidebar from "./Sidebar";
 
 export default function Navbar() {
-  const { theme, setTheme } : ThemeContextType= useThemeContext();
+  const { theme, setTheme } = useThemeContext();
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [themeChangeAnimation, setThemeChangeAnimation] = useState(false);

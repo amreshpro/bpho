@@ -24,6 +24,7 @@ export default {
         // => @media (max-width: 639px) { ... }
       },
     extend: {},
+    
   },
   plugins: [],
 }
